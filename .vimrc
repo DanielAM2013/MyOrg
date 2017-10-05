@@ -40,7 +40,7 @@ syntax on
 
 set foldmethod=syntax
 "set foldnestmax=2
-set foldcolumn=4
+set foldcolumn=6
 let g:syntastic_auto_jump=1
 "hi Folded guibg=#AA0000
 hi Folded ctermbg=0
