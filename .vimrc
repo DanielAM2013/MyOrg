@@ -30,7 +30,7 @@ Plugin	'DanielAM2013/MyVim'
 Plugin 'DanielAM2013/MyOrg'
 "Plugin 'DanielAM2013/MyTemp'
 Plugin 'DanielAM2013/Scripts'
-
+Bundle 'mateusbraga/vim-spell-pt-br'
 Plugin 'DanielAM2013/MyTemp'
 
 call vundle#end()            " required
@@ -40,7 +40,7 @@ syntax on
 
 set foldmethod=syntax
 "set foldnestmax=2
-set foldcolumn=6
+set foldcolumn=1
 let g:syntastic_auto_jump=1
 "hi Folded guibg=#AA0000
 hi Folded ctermbg=0
