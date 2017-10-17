@@ -143,4 +143,5 @@ op () {
 	done
 	read -p "Pick a number: " $n;
 	cd ${array[$n]}
+	echo "teste"
 }
