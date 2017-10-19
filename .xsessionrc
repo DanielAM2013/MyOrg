@@ -1,0 +1,7 @@
+compton --config $HOME/.i3/compton.conf -b 
+xrdb -load ~/.Xdefault
+nvidia-settings --load-config-only --assign="SyncToVBlank=0"
+#setxkbmap -option "caps:escape"
+#setxkbmap -layoyt "br,us"
+#setxkbmap -option "grp:alt_shift_toggle,"
+#compton -Cc -fF -I.015 -O.03 -D10 -t-1 -l-3 -r4.2 -o.5
