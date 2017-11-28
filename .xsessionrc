@@ -1,5 +1,5 @@
 compton --config $HOME/.i3/compton.conf -b 
-#xrdb -load ~/.Xdefault
+xrdb -load ~/.Xdefault
 #nvidia-settings --load-config-only --assign="SyncToVBlank=0"
 #setxkbmap -option "caps:escape"
 #setxkbmap -layoyt "br,us"
