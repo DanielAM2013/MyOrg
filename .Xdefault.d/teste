@@ -1,0 +1,58 @@
+bckground: #010101
+*foreground: #b6b6b6
+
+! --- standard colors ---
+
+! black
+*color0: #010101
+
+! bright_black
+*color8: #808080
+
+! red
+*color1: #820343
+
+! bright_red
+*color9: #d6066e
+
+! green
+*color2: #438203
+
+! bright_green
+*color10: #6ed606
+
+! yellow
+*color3: #824303
+
+! bright_yellow
+*color11: #d66e06
+
+! blue
+*color4: #034382
+
+! bright_blue
+*color12: #066ed6
+
+! magenta
+*color5: #430382
+
+! bright_magenta
+*color13: #6e06d6
+
+! cyan
+*color6: #038243
+
+! bright_cyan
+*color14: #06d66e
+
+! white
+*color7: #b6b6b6
+
+! bright_white
+*color15: #dddddd
+
+
+! ------------------------------------------------------------------------------
+! --- end of terminal colors section -------------------------------------------
+! ------------------------------------------------------------------------------
+ash: ---: comando não encontrado

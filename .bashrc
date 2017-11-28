@@ -110,18 +110,18 @@ fi
 [ -z $TMUX ] && exec tmux new-session
 
 # add custom config
-export PATH="/media/Files/Software/Anaconda/anaconda3/bin:$PATH"
-export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=$CUDA_HOME/lib64:/media/Files/Software/DeepCL/EasyCL/dist/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/media/Files/Software/DeepCL/dist/lib:$LD_LIBRARY_PATH
-export PATH=$CUDA_HOME/bin:$PATH
-
-export LIBGL_ALWAYS_INDIRECT=1
-source /opt/ros/lunar/setup.bash
-source $HOME/Ros/devel/setup.bash
-
-export ROS_IP=192.168.1.6
-export ROS_MASTER_URI=http://192.168.1.2:11311
+#export PATH="/media/Files/Software/Anaconda/anaconda3/bin:$PATH"
+#export CUDA_HOME=/usr/local/cuda
+#export LD_LIBRARY_PATH=$CUDA_HOME/lib64:/media/Files/Software/DeepCL/EasyCL/dist/lib:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=/media/Files/Software/DeepCL/dist/lib:$LD_LIBRARY_PATH
+#export PATH=$CUDA_HOME/bin:$PATH
+#
+#export LIBGL_ALWAYS_INDIRECT=1
+#source /opt/ros/lunar/setup.bash
+#source $HOME/Ros/devel/setup.bash
+#
+#export ROS_IP=192.168.1.6
+#export ROS_MASTER_URI=http://192.168.1.2:11311
 
 export EDITOR=vim
 
