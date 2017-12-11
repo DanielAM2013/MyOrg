@@ -150,6 +150,7 @@ function updateMyOrg {
 	cd  $HOME/.vim/bundle/MyOrg
 	git add .
 	git commit -am "Update $(date)"
+	git push
 	cd -
 }
 
