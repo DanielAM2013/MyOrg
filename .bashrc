@@ -44,7 +44,7 @@ git_color() {
 	COLOR_RESET="\033[0m"
   local git_status="$(git status 2> /dev/null)"
 
-  if [[ ! $git_status =~ "working directory clean" ]]; then
+  if [[ ! $git_status =~ "working tree clean" ]]; then
     echo -e $COLOR_RED
   elif [[ $git_status =~ "Your branch is ahead of" ]]; then
     echo -e $COLOR_YELLOW
@@ -96,12 +96,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
@@ -132,13 +126,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export VimSystem=".vim/bundle/Scripts/"
 
 #export PATH=$PATH:/usr/local/arm7/bin
 
 #export Android=/media/steam/Android
 #export PATH=$Android/tools:$Android/platform-tools:$PATH
 
+export VimSystem="$HOME/.vim/bundle/"
 export EDITOR='vim'
 export SHELL='bash'
 
@@ -147,8 +141,7 @@ then
 		[ -z $TMUX ] && exec tmux new-session 
 fi
 
-
-source $HOME/.vim/bundle/MyOrg/rosconfig.sh
+#source $HOME/$VimSystem/rosconfig.sh
 
 
 # added by Anaconda2 4.4.0 installer
@@ -181,10 +174,11 @@ reload () {
 	source $HOME/.bashrc
 }
 
-export Software="/media/Library/Software"
-export PATH="${PATH}:$Software/SDK/tools"
-export PATH="${PATH}:$Software/SDK/tools/bin"
-export PATH="${PATH}:$Software/SDK/platform-tools"
+export PATH="$VimSystem/Scripts:$PATH"
+#export Software="/media/Files/Software"
+#export PATH="${PATH}:$Software/SDK/tools"
+#export PATH="${PATH}:$Software/SDK/tools/bin"
+#export PATH="${PATH}:$Software/SDK/platform-tools"
 
 #export PATH="${PATH}:/opt/npm-global/bin"
 
@@ -194,13 +188,14 @@ xload () {
 }
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="$HOME/.sdkman"
+#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 #bind '"\e[A": history-search-backward']"'
 stty -ixon
 
+export ANDROID_HOME="/media/Files/Software/SDK"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias python='python3.6'
