@@ -1,0 +1,33 @@
+ii  console-setup                         1.164                             all          console font and keymap setup program
+ii  fontconfig                            2.11.0-6.7+b1                     amd64        generic font configuration library - support binaries
+ii  fontconfig-config                     2.11.0-6.7                        all          generic font configuration library - configuration
+ii  fonts-crosextra-caladea               20130214-1                        all          Sans-serif font metric-compatible with Cambria font
+ii  fonts-crosextra-carlito               20130920-1                        all          Sans-serif font metric-compatible with Calibri font
+ii  fonts-dejavu                          2.37-1                            all          metapackage to pull in fonts-dejavu-core and fonts-dejavu-extra
+ii  fonts-dejavu-core                     2.37-1                            all          Vera font family derivate with additional characters
+ii  fonts-dejavu-extra                    2.37-1                            all          Vera font family derivate with additional characters (extra variants)
+ii  fonts-font-awesome                    4.7.0~dfsg-1                      all          iconic font designed for use with Twitter Bootstrap
+ii  fonts-lato                            2.0-1                             all          sans-serif typeface family font
+ii  fonts-liberation                      1:1.07.4-2                        all          Fonts with the same metrics as Times, Arial and Courier
+ii  fonts-linuxlibertine                  5.3.0-2                           all          Linux Libertine family of fonts
+ii  fonts-opensymbol                      2:102.7+LibO5.2.7-1               all          OpenSymbol TrueType font
+ii  fonts-sil-gentium                     20081126:1.03-1                   all          extended Unicode Latin font ("a typeface for the nations")
+ii  fonts-sil-gentium-basic               1.1-7                             all          smart Unicode font families (Basic and Book Basic) based on Gentium
+ii  fonts-vlgothic                        20141206-3                        all          Japanese TrueType font from Vine Linux
+ii  gucharmap                             1:9.0.2-1                         amd64        Unicode character picker and font browser
+ii  kbd                                   2.0.3-2+b1                        amd64        Linux console font and keytable utilities
+ii  libfont-afm-perl                      1.20-2                            all          Font::AFM - Interface to Adobe Font Metrics files
+ii  libfontconfig1:amd64                  2.11.0-6.7+b1                     amd64        generic font configuration library - runtime
+ii  libfontenc1:amd64                     1:1.1.3-1+b2                      amd64        X11 font encoding library
+ii  libfonts-java                         1.1.6.dfsg-3                      all          Java fonts layouting library
+ii  libfreetype6:amd64                    2.6.3-3.2                         amd64        FreeType 2 font engine, shared library files
+ii  libxfont1:amd64                       1:1.5.2-4                         amd64        X11 font rasterisation library
+ii  libxfont2:amd64                       1:2.0.1-3                         amd64        X11 font rasterisation library
+ii  libxft2:amd64                         2.3.2-1+b2                        amd64        FreeType-based font drawing library for X
+ii  xfonts-base                           1:1.0.4+nmu1                      all          standard fonts for X
+ii  xfonts-efont-unicode                  0.4.2-8                           all          /efont/ Unicode fonts for X which cover various scripts
+ii  xfonts-efont-unicode-ib               0.4.2-8                           all          /efont/ Unicode fonts for X (italic and bold)
+ii  xfonts-encodings                      1:1.0.4-2                         all          Encodings for X.Org fonts
+ii  xfonts-terminus                       4.40-2                            all          Fixed-width fonts for fast reading
+ii  xfonts-terminus-oblique               4.40-2                            all          Oblique version of the Terminus font
+ii  xfonts-utils                          1:7.7+4                           amd64        X Window System font utility programs

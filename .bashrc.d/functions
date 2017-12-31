@@ -1,0 +1,20 @@
+op () {
+	# list disciplines
+	cd $HOME/Documents/Org/Estudo/Mestrado;
+	array=(*); \
+	for i in $(seq 0 ${#array})
+	do
+		echo "$i) ${array[$i]}";
+	done
+	read -p "Pick a number: " $n;
+	cd ${array[$n]}
+	echo "teste"
+}
+
+function updateMyOrg {
+	cd  $HOME/.vim/bundle/MyOrg
+	git add .
+	git commit -am "Update $(date)"
+	git push
+	cd -
+}
