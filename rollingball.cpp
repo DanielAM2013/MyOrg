@@ -4,10 +4,10 @@ using namespace std;
 
 enum prox {
 	STOP = 0,
-	LEFT = -1,
-	RIGHT = -2,
-	UP = -3,
-	DOWN = -4,
+	LEFT = 1,
+	RIGHT = 2,
+	UP = 3,
+	DOWN = 4,
 };
 
 typedef struct pose_t {
@@ -42,43 +42,68 @@ typedef struct pose_t {
 } pose_t;
 
 
+
+void printm(int m, int *vec) {
+	for ( int i=0; i<m; i++) {
+		for ( int j=0; j<m; j++)
+			cout << vec[i*m+j] << " ";
+		cout << endl;
+	}
+}
+
 prox menor_vizinho(int m, pose_t p, int *vec) {
 	
+	int min[5]={p.test(0,0,m,vec),
+		p.test(0,-1,m,vec),
+		p.test(0,1,m,vec),
+		p.test(-1,0,m,vec),
+		p.test(1,0,m,vec)
+	};
+
+	int tmp=min[0], idx=0;
+
+	for (int i=1; i<5; i++) {
+		if ( min[i] < tmp ) {
+			idx=i;
+			tmp=min[i];
+		}
+	}
+
 	// melhor caso
-	if ( p.test(0,-1,m,vec) < p.test(0,0,m,vec) )
-		return LEFT;
-	else
-	if ( p.test(0,1,m,vec) < p.test(0,0,m,vec) )
-		return RIGHT;
-	else
-	if ( p.test(1,0,m,vec) < p.test(0,0,m,vec) )
-		return UP;
-	else
-	if ( p.test(-1,0,m,vec) < p.test(0,0,m,vec) )
-		return DOWN;
-	else
-		return STOP;
+	switch (idx) {
+		case (0):
+			return STOP;
+		case (1):
+			return LEFT;
+		case (2):
+			return RIGHT;
+		case (3):
+			return UP;
+		case (4):
+			return DOWN;
+	}
 }
 
 pose_t step(pose_t p, prox act) {
 	pose_t tmp(p.i,p.j);
 	switch (act) {
 		case (LEFT):
-			tmp.add(p.i, p.j-1);
-			return tmp;
+			tmp.add(0, -1);
+			break;
 		case (RIGHT):
-			tmp.add(p.i, p.j+1);
-			return tmp;
+			tmp.add(0, +1);
+			break;
 		case (UP):
-			tmp.add(p.i+1, p.j);
-			return tmp;
+			tmp.add(-1, 0);
+			break;
 		case (DOWN):
-			tmp.add(p.i-1, p.j);
-			return tmp;
+			tmp.add(+1, 0);
+			break;
 		case (STOP):
-			tmp.add(p.i, p.j);
-			return tmp;
+			break;
 	}
+
+	return tmp;
 }
 
 void achar_menor( int m, pose_t p, prox *nxt, int *val) {
@@ -87,22 +112,26 @@ void achar_menor( int m, pose_t p, prox *nxt, int *val) {
 	pose_t px;
 	px = p;
 	int deep=0;
-	while ( nxt[px.i*m+px.j] != STOP && val[px.i*m+px.j] == -1 ) {
+	if ( nxt[px.i*m+px.j] == STOP ) {
+		val[px.i*m+px.j]=0;
+		return;
+	}
+	while ( nxt[px.i*m+px.j] != STOP ) {
+		if ( val[px.i*m+px.j] != -1 ) {
+			deep+=val[px.i*m+px.j];
+			break;
+		}
 		px = step(px, nxt[px.i*m+px.j]);
 		deep++;
 	}
-	cout << "Achou menor" << endl;
-
+	cout << deep << endl;
 	px = p;
 	while ( nxt[px.i*m+px.j] != STOP && val[px.i*m+px.j] == -1 ) {
-		px = step(px, nxt[px.i*m+px.j]);
 		val[px.i*m+px.j]=deep--;
+		px = step(px, nxt[px.i*m+px.j]);
 	}
-	cout << "Achou menor" << endl;
+	cout << deep << endl;
 
-	if ( nxt[px.i*m+px.j] == STOP ) {
-		val[px.i*m+px.j]=0;
-	}
 }
 
 void rollingball( int m, int *vec) {
@@ -117,6 +146,7 @@ void rollingball( int m, int *vec) {
 			cout << "Achou menor vizinho" << endl;
 		}
 	}
+	printm(m, (int*) nxt);
 
 	int val[m][m];
 	// setup val
@@ -129,17 +159,14 @@ void rollingball( int m, int *vec) {
 	for ( int i=0; i<m; i++) {
 		for ( int j=0; j<m; j++) {
 			pose_t p(i,j);
+			cout << "Procurar menor " << p.i << " " << p.j << endl;
 			achar_menor( m, p, (prox*) nxt, (int*) val);
-			cout << "Achou menor " << endl;
+			cout << "Achou menor " << p.i << " " << p.j << endl;
 		}
 	}
+	printm(m, (int*) val);
 
-	// seguir o caminho até encontrar o menor
-	// deve atualizar os valores do caminho
-	// caso o caminho ja esteja marcado deve atualizar
-	//
 }
-
 
 int main () {
 
@@ -156,6 +183,7 @@ int main () {
 		}
 		// matriz armazenada
 		rollingball(m, (int*) vec);
+		printm(m, (int*) vec);
 	}
 
 	return 0;
