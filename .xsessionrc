@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-compton --config $HOME/.config/i3/compton.conf -b 
-=======
-
-compton --config $HOME/.i3/compton.conf -b 
->>>>>>> 7caa2e5a696544f602e4f82a3a6533211f10cb3f
-xrdb -load ~/.Xdefault
+#compton --config $HOME/.config/i3/compton.conf -b 
+#xrdb -merge ~/.Xdefault
 #nvidia-settings --load-config-only --assign="SyncToVBlank=0"
 #setxkbmap -option "caps:escape"
 #setxkbmap -layoyt "br,us"
