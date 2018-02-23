@@ -91,12 +91,14 @@ void achar_menor( int m, pose_t p, prox *nxt, int *val) {
 		px = step(px, nxt[px.i*m+px.j]);
 		deep++;
 	}
+	cout << "Achou menor" << endl;
 
 	px = p;
 	while ( nxt[px.i*m+px.j] != STOP && val[px.i*m+px.j] == -1 ) {
 		px = step(px, nxt[px.i*m+px.j]);
 		val[px.i*m+px.j]=deep--;
 	}
+	cout << "Achou menor" << endl;
 
 	if ( nxt[px.i*m+px.j] == STOP ) {
 		val[px.i*m+px.j]=0;
@@ -105,11 +107,14 @@ void achar_menor( int m, pose_t p, prox *nxt, int *val) {
 
 void rollingball( int m, int *vec) {
 	// ler primeiro e identificar o vizinho mais proximo
+	cout << "Iniciando rollingball" << endl;
 	prox nxt[m][m];
 	for ( int i=0; i<m; i++) {
 		for ( int j=0; j<m; j++) {
 			pose_t p(i,j);
+			cout << "Menor vizinho em " << p.i << " "<< p.j << endl;
 			nxt[i][j] = menor_vizinho(m, p, vec);
+			cout << "Achou menor vizinho" << endl;
 		}
 	}
 
@@ -125,6 +130,7 @@ void rollingball( int m, int *vec) {
 		for ( int j=0; j<m; j++) {
 			pose_t p(i,j);
 			achar_menor( m, p, (prox*) nxt, (int*) val);
+			cout << "Achou menor " << endl;
 		}
 	}
 
