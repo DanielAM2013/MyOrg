@@ -27,12 +27,12 @@ Plugin 'vim-scripts/taglist.vim'
 "Plugin 'severin-lemaignan/vim-minimap'
 "Plugin 'koron/minimap-vim'
 "Plugin 'Raimondi/delimitMate'
-Plugin	'DanielAM2013/MyVim'
+Plugin 'DanielAM2013/MyAlg'
+Plugin 'DanielAM2013/MyVim'
 Plugin 'DanielAM2013/MyOrg'
-"Plugin 'DanielAM2013/MyTemp'
+Plugin 'DanielAM2013/MyTemp'
 Plugin 'DanielAM2013/Scripts'
 Bundle 'mateusbraga/vim-spell-pt-br'
-Plugin 'DanielAM2013/MyTemp'
 
 call vundle#end()            " required
 "filetype plugin indent on    " required
