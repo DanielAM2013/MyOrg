@@ -112,7 +112,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias picocom='picocom /dev/ttyUSB0 -l -b 115200 -f n'
 export https_proxy=105.112.150.10:8080
 export http_proxy=105.112.150.10:8080
 export PATH="$HOME/bin:$PATH"
+
+export MyOrg=debian

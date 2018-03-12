@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# keyboard
+sudo cp keyboard /etc/default/keyboard
+#sudo mv lightdm /etc/lightdm/li
+
+# bashrc
+if [ -z "$MyOrg" ]
+then
+	mv $HOME/.bashrc $HOME/.bashrc.old
+	ln -sr .bashrc $HOME/.bashrc
+	ln -sr .bashrc.d $HOME/.bashrc.d
+	ln -sr .vimrc $HOME/.vimrc
+	ln -sr .tmux.conf $HOME/.tmux.conf
+	mv $HOME/.config/i3 $HOME/.config/i3.old
+	ln -sr i3 $HOME/.config/i3
+	ln -sr .Xdefault $HOME/
+	ln -sr .Xdefault.d $HOME/
+	vim -c PluginInstall  -c quitall
+	sudo apt install ctags
+fi
+
+
+
