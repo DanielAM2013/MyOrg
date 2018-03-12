@@ -63,19 +63,20 @@ git_branch () {
 
   if [[ $git_status =~ $on_branch ]]; then
     local branch=${BASH_REMATCH[1]}
-    echo " ($branch)"
+    #echo " ($branch)"
   elif [[ $git_status =~ $on_commit ]]; then
     local commit=${BASH_REMATCH[1]}
-    echo " ($commit)"
+    #echo " ($commit)"
   fi
 }
 
+set -o vi
+bind 'set show-mode-in-prompt on'
 
 if [ "$color_prompt" = yes ]; then
 	PS1="${debian_chroot:+($debian_chroot)}\[\033[01;34m\][\W]\[\033[00m\]"
 	PS1+="\[\$(git_color)\]"        # colors git status
 	PS1+="\$(git_branch)\n"           # prints current branch
-	#PS1+="\[\033[1;49;33m\]\$(parse_git_branch)\n"
 	PS1+="\[\033[1;49;31m\]>> \[\033[0m\]"
 
 else
@@ -199,3 +200,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /opt/ros/lunar/setup.bash
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu"
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64/"
+export PATH="$PATH:$HOME/bin"

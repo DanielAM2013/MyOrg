@@ -10,6 +10,7 @@ call vundle#begin()
 "Plugin 'benmills/vimux'
 "Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'rust-lang/rust.vim'
 "Plugin 'L9'
 "Plugin 'git://git.wincent.com/command-t.git'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -33,6 +34,8 @@ Plugin 'DanielAM2013/MyOrg'
 Plugin 'DanielAM2013/Scripts'
 Bundle 'mateusbraga/vim-spell-pt-br'
 Plugin 'DanielAM2013/MyTemp'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()            " required
 "filetype plugin indent on    " required
@@ -62,3 +65,4 @@ noremap <Right> <NOP>
 hi MatchParen cterm=none ctermbg=none ctermfg=blue
 hi clear SpellBad
 hi SpellBad cterm=underline
+let g:airline_theme='angr'
