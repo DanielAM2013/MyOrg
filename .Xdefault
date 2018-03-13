@@ -2,8 +2,25 @@ URxvt*geometry: 120x40
 URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0000/dddd
 
+URxvt.letterSpace: 0
+
 Xft.dpi: 96
- URxvt*font: xft:Terminus:style=Regular:size=8:antialias=false
+ URxvt*font: xft:Terminus:style=Regular:size=14:antialias=false, \
+ xft:Terminus:style=Regular:size=14:antialias=false,\
+ xft:Ethjopic Hiwua:style=Regular:size=14:antialias=false,\
+ xft:Ethiopic Fantuwua:style=Regular:size=14:antialias=false,\
+ xft:Ethiopic Tint:style=Regular:size=14:antialias=false,\
+ xft:Ethiopic Yebse:style=Regular:size=14:antialias=false,\
+ xft:Ethiopic Yigezu Bisrat Gothic:style=Regular:size=14:antialias=false,\
+ xft:Ethiopic Zelan:style=Regular:size=14:antialias=false,\
+ xft:Ethiopic Wookianos:style=Regular:size=14:antialias=false,\
+ xft:Junicode:style=Regular:size=14:antialias=false,\
+ xft:Ethiopic Yigezu Bisrat Goffer:style=Regular:size=14:antialias=false, \
+ xft:VL Gothic,VL ゴシック:style=regular:size=14:antialias=false
+
+
+! using the old style font loading to avoid the cursor to sometime disappear...
+!URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-u
 
 URxvt*saveLines: 10000
 URxvt*scrollBar: false
