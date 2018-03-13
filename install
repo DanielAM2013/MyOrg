@@ -18,6 +18,7 @@ then
 	ln -sr .Xdefault.d $HOME/
 	vim -c PluginInstall  -c quitall
 	sudo apt install ctags
+	sudo apt install fonts-font-awesome
 fi
 
 
