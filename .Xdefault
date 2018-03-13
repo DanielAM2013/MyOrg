@@ -28,31 +28,16 @@ URxvt*scrollBar: false
 URxvt*cursorColor: white
 URxvt*cursorColor2: #aaaaaa
 
-!URxvt.iconFile: /usr/share/icons/Humanity/apps/48/bash.svg
-
-URxvt.iso14755: off
-URxvt.iso14755_52: off
+URxvt.letterSpace: -2
 
 ! tabbedex is not provided by default (Debian/Ubuntu)
 ! put it in ~/.urxvt/
 URxvt.perl-lib: .urxvt/
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,matcher,clipboard
 
 ! Launch firefox with the a left click on a URL
 !URxvt.url-launcher: /usr/bin/firefox
 !URxvt.matcher.button: o
-
-! Tabs: gray background, ~white texT
-! and the opposite for the currently focused tab
-!URxvt.tabbed.tabbar-fg: 7
-!URxvt.tabbed.tabbar-bg: 8
-!URxvt.tabbed.tab-fg: 8
-!URxvt.tabbed.tab-bg: 7
-
-! Display the title of terminal next to tabs list
-!URxvt.tabbed.title: true
-!URxvt.tabbed.title-bg: 8
-!URxvt.tabbed.title-fg: 7
 
 ! correct name so that applications detects a 256 color
 ! enabled terminal emulator
@@ -64,6 +49,10 @@ URxvt*fading: 40
 Xft.lcdfilter: ldcdefault
 Xft.hintstyle: hintslight
 
+!URxvt.clipboard.autocopy: true
+URxvt.keysym.M-C-c: perl:clipboard:copy
+!URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+!URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 #include ".Xdefault.d/badwolf"
 !#include ".Xdefault.d/badwolf_2"

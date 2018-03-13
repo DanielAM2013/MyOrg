@@ -15,7 +15,6 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec i3-dmenu-desktop
 
-
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -101,7 +100,7 @@ client.focused_inactive #000000 #000000 #000000 #000000 #000000
 client.background       #000000
 
 bar {
-	strip_workspace_numbers yes
+	#strip_workspace_numbers yes
 	colors {
 		# Whole color settings
 		background #000000
