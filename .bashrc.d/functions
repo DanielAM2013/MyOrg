@@ -1,14 +1,17 @@
 op () {
 	# list disciplines
-	cd $HOME/Documents/Org/Estudo/Mestrado;
+#	cd $HOME/Documents/Org/Estudo/Mestrado;
 	array=(*); \
 	for i in $(seq 0 ${#array})
 	do
 		echo "$i) ${array[$i]}";
 	done
 	read -p "Pick a number: " $n;
-	cd ${array[$n]}
-	echo "teste"
+	re='^[0-9]+$';
+	if [[ $n =~ $re ]]
+	then
+		cd ${array[$n]};
+	fi
 }
 
 function updateAll {
