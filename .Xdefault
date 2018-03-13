@@ -2,8 +2,6 @@ URxvt*geometry: 120x40
 URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0000/dddd
 
-URxvt.letterSpace: 0
-
 Xft.dpi: 96
  URxvt*font: xft:Terminus:style=Regular:size=14:antialias=false, \
  xft:Terminus:style=Regular:size=14:antialias=false,\
