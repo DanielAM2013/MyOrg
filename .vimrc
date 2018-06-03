@@ -63,4 +63,5 @@ noremap <Right> <NOP>
 hi MatchParen cterm=none ctermbg=none ctermfg=blue
 hi clear SpellBad
 hi SpellBad cterm=underline
-let g:airline_theme='angr'
+vmap <C-C> "+y
+set mouse=v

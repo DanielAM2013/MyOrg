@@ -3,18 +3,17 @@ URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0000/dddd
 
 Xft.dpi: 96
- URxvt*font: xft:Terminus:style=Regular:size=14:antialias=false, \
- xft:Terminus:style=Regular:size=14:antialias=false,\
- xft:Ethjopic Hiwua:style=Regular:size=14:antialias=false,\
+URxvt*font: xft:Terminus:style=Regular:size=14:antialias=false, \
+  xft:Ethjopic Hiwua:style=Regular:size=14:antialias=false, \
  xft:Ethiopic Fantuwua:style=Regular:size=14:antialias=false,\
  xft:Ethiopic Tint:style=Regular:size=14:antialias=false,\
  xft:Ethiopic Yebse:style=Regular:size=14:antialias=false,\
  xft:Ethiopic Yigezu Bisrat Gothic:style=Regular:size=14:antialias=false,\
  xft:Ethiopic Zelan:style=Regular:size=14:antialias=false,\
- xft:Ethiopic Wookianos:style=Regular:size=14:antialias=false,\
- xft:Junicode:style=Regular:size=14:antialias=false,\
- xft:Ethiopic Yigezu Bisrat Goffer:style=Regular:size=14:antialias=false, \
- xft:VL Gothic,VL ゴシック:style=regular:size=14:antialias=false
+ xft:Ethiopic Wookianos:style=Regular:size=14:antialias=false, \
+ !xft:Junicode:style=Regular:size=14:antialias=false,\
+ !xft:Ethiopic Yigezu Bisrat Goffer:style=Regular:size=14:antialias=false,
+ !xft:VL Gothic,VL ゴシック:style=regular:size=14:antialias=false
 
 
 ! using the old style font loading to avoid the cursor to sometime disappear...
@@ -47,10 +46,10 @@ URxvt*fading: 40
 Xft.lcdfilter: ldcdefault
 Xft.hintstyle: hintslight
 
-!URxvt.clipboard.autocopy: true
-URxvt.keysym.M-C-c: perl:clipboard:copy
-!URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-!URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.iso14755: False
+
+URxvt.keysym.C-M-c: perl:clipboard:copy
+URxvt.keysym.C-M-v: perl:clipboard:paste
 
 #include ".Xdefault.d/badwolf"
 !#include ".Xdefault.d/badwolf_2"
@@ -60,3 +59,5 @@ URxvt.keysym.M-C-c: perl:clipboard:copy
 !#include ".Xdefault.d/solarized_light"
 !#include ".Xdefault.d/solarized"
 !#include ".Xdefault.d/solarized_test"
+
+URxvt.background-expr: scale  keep { load $HOME/img.jpeg }
