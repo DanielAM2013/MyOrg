@@ -1,25 +1,64 @@
+## check if this is chroot #####################################################
+
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+## set bash color ##############################################################
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 case "$TERM" in
     xterm-color|rxvt-unicode|screen-256color) color_prompt=yes;;
 esac
 
+## set bash line ###############################################################
 if [ "$color_prompt" = yes ]; then
 	PS1="${debian_chroot:+($debian_chroot)}\[\033[01;34m\][\W]\[\033[00m\]"
-	PS1+="\[\$(git_color)\]"        # colors git status
-	PS1+="\$(git_branch)\n"           # prints current branch
+	PS1+="\[\$(git_color)\]"
+	PS1+="\$(git_branch)\n"
 	PS1+="\[\033[1;49;31m\]>> \[\033[0m\]"
 else
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
+## common debian configuration ################################################
+
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
+
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+## set tmux ####################################################################
+
+if [ "`cat /sys/class/tty/tty0/active`" == "tty7" ]
+then
+	[ -z $TMUX ] && exec tmux new-session 
+fi
+
+## history #####################################################################
+
+HISTCONTROL=ignoreboth
+
+shopt -s histappend
+
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+shopt -s checkwinsize
+
+## bash in vi mode #############################################################
 
 set -o vi
 bind 'set show-mode-in-prompt on'

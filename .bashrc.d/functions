@@ -1,5 +1,4 @@
 op () {
-	# list disciplines
 #	cd $HOME/Documents/Org/Estudo/Mestrado;
 	array=(*); \
 	for i in $(seq 0 ${#array})
@@ -14,6 +13,26 @@ op () {
 	fi
 }
 
+## Bash ########################################################################
+
+self () {
+	edit ~/.bashrc.d
+}
+
+reload () {
+	source $HOME/.bashrc
+}
+
+show_variables () {
+	# git
+	local user_email=$(git config --global user.email)
+	echo $user_email \| $GIT_EMAIL
+	local user_name=$(git config --global user.name)
+	echo $user_name \| $GIT_NAME
+}
+
+## GIT #########################################################################
+#
 function updateAll {
 	cd  $HOME/.vim/bundle/MyOrg
 	git add .
@@ -21,7 +40,6 @@ function updateAll {
 	git push
 	cd -
 }
-
 git_color() {
 	COLOR_RED="\033[0;31m"
 	COLOR_YELLOW="\033[0;33m"
@@ -48,12 +66,12 @@ git_color() {
 
 git_branch () {
 	local git_status="$(git status 2> /dev/null)"
-		local on_branch="On branch ([^${IFS}]*)"
-		local on_commit="HEAD detached at ([^${IFS}]*)"
+	local on_branch="On branch ([^${IFS}]*)"
+	local on_commit="HEAD detached at ([^${IFS}]*)"
 
-		if [[ $git_status =~ $on_branch ]]
-		then
-			local branch=${BASH_REMATCH[1]}
+	if [[ $git_status =~ $on_branch ]]
+	then
+		local branch=${BASH_REMATCH[1]}
 #			echo " ($branch)"
 	elif [[ $git_status =~ $on_commit ]]
 	then
@@ -62,16 +80,28 @@ git_branch () {
 	fi
 }
 
+confit_git () {
+	# git
+	if test ! -z "$GIT_EMAIL"
+	then
+		git config --global user.email $GIT_EMAIL
+	else
+		echo Error: set git user email
+	fi
 
-self () {
-	edit ~/.bashrc
+	if test ! -z "$GIT_NAME"
+	then
+		git config --global user.name $GIT_NAME
+	else
+		echo Error: set git user name
+	fi
 }
 
-reload () {
-	source $HOME/.bashrc
-}
 
+## X (urxvt) ###################################################################
 xload () {
 	echo $(xrdb -merge ~/.Xdefault)
 	echo $(xrdb -load ~/.Xdefault)
 }
+
+

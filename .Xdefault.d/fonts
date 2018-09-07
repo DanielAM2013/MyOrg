@@ -1,0 +1,17 @@
+#define font_size 14
+
+URxvt*font: xft:Terminus:style=Regular:pixelsize=font_size:antialias=false, \
+  xft:Ethjopic Hiwua:style=Regular:pixelsize=font_size:antialias=false, \
+ xft:Ethiopic Fantuwua:style=Regular:pixelsize=font_size:antialias=false,\
+ xft:Ethiopic Tint:style=Regular:pixelsize=font_size:antialias=false,\
+ xft:Ethiopic Yebse:style=Regular:pixelsize=font_size:antialias=false,\
+ xft:Ethiopic Yigezu Bisrat Gothic:style=Regular:pixelsize=font_size:antialias=false,\
+ xft:Ethiopic Zelan:style=Regular:pixelsize=font_size:antialias=false,\
+ xft:Ethiopic Wookianos:style=Regular:pixelsize=font_size:antialias=false, \
+ xft:NanumBarunGothic:style=Regular:pixelpixelsize=font_size:antialias=false, \
+ !xft:Junicode:style=Regular:pixelsize=font_size:antialias=false,\
+ !xft:Ethiopic Yigezu Bisrat Goffer:style=Regular:pixelsize=font_size:antialias=false,
+ !xft:VL Gothic,VL ゴシック:style=regular:pixelsize=font_size:antialias=false
+
+! using the old style font loading to avoid the cursor to sometime disappear...
+!URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-u

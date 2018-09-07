@@ -1,55 +1,15 @@
+!-------------------------------------------------------------------------------
+! resolution & colors
+Xft.dpi: 96
 URxvt*geometry: 120x40
 URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0000/dddd
 
-Xft.dpi: 96
-URxvt*font: xft:Terminus:style=Regular:size=14:antialias=false, \
-  xft:Ethjopic Hiwua:style=Regular:size=14:antialias=false, \
- xft:Ethiopic Fantuwua:style=Regular:size=14:antialias=false,\
- xft:Ethiopic Tint:style=Regular:size=14:antialias=false,\
- xft:Ethiopic Yebse:style=Regular:size=14:antialias=false,\
- xft:Ethiopic Yigezu Bisrat Gothic:style=Regular:size=14:antialias=false,\
- xft:Ethiopic Zelan:style=Regular:size=14:antialias=false,\
- xft:Ethiopic Wookianos:style=Regular:size=14:antialias=false, \
- !xft:Junicode:style=Regular:size=14:antialias=false,\
- !xft:Ethiopic Yigezu Bisrat Goffer:style=Regular:size=14:antialias=false,
- !xft:VL Gothic,VL ゴシック:style=regular:size=14:antialias=false
-
-
-! using the old style font loading to avoid the cursor to sometime disappear...
-!URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-u
-
-URxvt*saveLines: 10000
-URxvt*scrollBar: false
-
-URxvt*cursorColor: white
-URxvt*cursorColor2: #aaaaaa
-
-URxvt.letterSpace: -2
-
-! tabbedex is not provided by default (Debian/Ubuntu)
-! put it in ~/.urxvt/
-URxvt.perl-lib: .urxvt/
-URxvt.perl-ext-common: default,matcher,clipboard
-
-! Launch firefox with the a left click on a URL
-!URxvt.url-launcher: /usr/bin/firefox
-!URxvt.matcher.button: o
-
-! correct name so that applications detects a 256 color
-! enabled terminal emulator
-!URxvt*termName: rxvt-256color
-
 !URxvt*foreground: #ffffff
 URxvt*fading: 40
 
-Xft.lcdfilter: ldcdefault
-Xft.hintstyle: hintslight
-
-URxvt.iso14755: False
-
-URxvt.keysym.C-M-c: perl:clipboard:copy
-URxvt.keysym.C-M-v: perl:clipboard:paste
+URxvt.letterSpace: -2
+URxvt*termName: rxvt-256color
 
 #include ".Xdefault.d/badwolf"
 !#include ".Xdefault.d/badwolf_2"
@@ -60,4 +20,35 @@ URxvt.keysym.C-M-v: perl:clipboard:paste
 !#include ".Xdefault.d/solarized"
 !#include ".Xdefault.d/solarized_test"
 
-URxvt.background-expr: scale  keep { load $HOME/img.jpeg }
+!-------------------------------------------------------------------------------
+! fonts
+#include ".Xdefault.d/fonts"
+
+
+!-------------------------------------------------------------------------------
+URxvt*saveLines: 10000
+URxvt*scrollBar: false
+
+URxvt*cursorColor: white
+URxvt*cursorColor2: #aaaaaa
+
+!-------------------------------------------------------------------------------
+! tabbedex is not provided by default (Debian/Ubuntu)
+! put it in ~/.urxvt/
+URxvt.perl-lib: .urxvt/
+URxvt.perl-ext-common: default,matcher,clipboard
+
+URxvt.keysym.C-M-c: perl:clipboard:copy
+URxvt.keysym.C-M-v: perl:clipboard:paste
+
+!-------------------------------------------------------------------------------
+! Launch firefox with the a left click on a URL
+!URxvt.url-launcher: /usr/bin/x-www-browser
+!URxvt.matcher.button: o
+
+!-------------------------------------------------------------------------------
+! unknown
+!URxvt.background-expr: scale  keep { load $HOME/img.jpeg }
+!Xft.lcdfilter: ldcdefault
+!Xft.hintstyle: hintslight
+!URxvt.iso14755: False
