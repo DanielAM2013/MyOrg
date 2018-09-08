@@ -1,5 +1,5 @@
 #font pango:DejaVu Sans Mono 8
-font pango:FontAwesome 12
+font pango:FontAwesome 10
 
 set $mod Mod4
 
