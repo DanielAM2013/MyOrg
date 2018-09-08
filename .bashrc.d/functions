@@ -16,10 +16,16 @@ op () {
 ## Bash ########################################################################
 
 self () {
+	#local files=($(ls -a ~/.vim/bundle/MyOrg | sed '/^\.*$/d')) idx=0;
+	##echo ${files[@]}
+	#for i in ${files[@]}
+	#do
+	#	echo "$idx ) $i";
+	#	let "idx++";
+	#done
 	#read c;
-	local files=($(ls -a ~/.vim/bundle/MyOrg | sed '/^\.*$/d'))
-	echo ${files[@]}
-	#edit ~/.bashrc.d
+	#echo ${files[$c]};
+	vim ~/.vim/bundle/MyOrg
 }
 
 reload () {

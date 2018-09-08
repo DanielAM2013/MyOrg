@@ -25,6 +25,3 @@ then
 	mv $HOME/.config/i3 $HOME/.config/i3.old
 	ln -sr i3 $HOME/.config/i3
 fi
-
-
-
