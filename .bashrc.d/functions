@@ -16,7 +16,10 @@ op () {
 ## Bash ########################################################################
 
 self () {
-	edit ~/.bashrc.d
+	#read c;
+	local files=($(ls -a ~/.vim/bundle/MyOrg | sed '/^\.*$/d'))
+	echo ${files[@]}
+	#edit ~/.bashrc.d
 }
 
 reload () {
