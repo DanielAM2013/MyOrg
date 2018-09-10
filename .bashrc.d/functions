@@ -89,7 +89,7 @@ git_branch () {
 	fi
 }
 
-confit_git () {
+config_git () {
 	# git
 	if test ! -z "$GIT_EMAIL"
 	then

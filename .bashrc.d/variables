@@ -27,6 +27,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:$HOME/.vim/bundle/Scripts
 
 
+# PATH_here
+export PATH=$PATH:/opt/Qualcomm/QCAT/QCAT/bin
+
 ## git #########################################################################
 export GIT_EMAIL=daniel.antela.torquato@gmail.com
 export GIT_NAME=DanielAM2013
