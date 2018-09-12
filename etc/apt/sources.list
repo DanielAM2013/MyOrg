@@ -1,0 +1,4 @@
+# deb-src http://deb.debian.org/debian/ stretch-updates main
+deb http://ftp.br.debian.org/debian stretch main non-free contrib
+deb [arch=amd64] https://download.docker.com/linux/debian stretch stable
+# deb-src [arch=amd64] https://download.docker.com/linux/debian stretch stable

@@ -1,27 +1,35 @@
 #!/bin/bash
 
+# check network
+# install source.list
+# 
+
+
 if [ -z "$MyOrg" ]
 then
-	sudo cp keyboard /etc/default/keyboard
-	sudo cp lightdm,conf /etc/lightdm/lightdm.conf
+	sudo cp etc/default/keyboard /etc/default/keyboard
+	sudo cp etc/lightdm/lightdm* /etc/lightdm/
 	mv $HOME/.bashrc $HOME/.bashrc.old
+	mv $HOME/.config/i3 $HOME/.config/i3.old
+	ln -sr i3 $HOME/.config/i3
 	ln -sr .bashrc $HOME/
 	ln -sr .bashrc.d $HOME/
 	ln -sr .tmux.conf $HOME/
 	ln -sr .Xdefault $HOME/
 	ln -sr .Xdefault.d $HOME/
+	ln -sr .vimrc $HOME/
 	sudo apt install -y \
+		git \
 		ctags \
 		lightdm \
+		lightdm-gtk-greeter-settings \
 		i3 \
 		network-manager-gnome \
 		thunar \
+		pavucontrol \
 		fonts-font-awesome \
 		tmux \
 		vim \
-		zathura
-	ln -sr .vimrc $HOME/
+		zathura \
 	vim -c PluginInstall  -c quitall
-	mv $HOME/.config/i3 $HOME/.config/i3.old
-	ln -sr i3 $HOME/.config/i3
 fi
