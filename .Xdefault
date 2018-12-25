@@ -11,15 +11,9 @@ URxvt*fading: 40
 URxvt.letterSpace: -2
 URxvt*termName: rxvt-256color
 
-#include ".Xdefault.d/badwolf"
-!#include ".Xdefault.d/badwolf_2"
-!#include ".Xdefault.d/solarized_dark"
-!#include ".Xdefault.d/monokai_dark"
-!#include ".Xdefault.d/monokai_dark_2"
-!#include ".Xdefault.d/solarized_light"
-!#include ".Xdefault.d/solarized"
-!#include ".Xdefault.d/solarized_test"
-
+!-------------------------------------------------------------------------------
+! theme
+#include ".Xdefault.d/themes/badwolf"
 !-------------------------------------------------------------------------------
 ! fonts
 #include ".Xdefault.d/fonts"

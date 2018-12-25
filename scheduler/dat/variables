@@ -1,0 +1,11 @@
+opt=(
+"task" \
+"resource" \
+);
+
+task=(
+"add" \
+"remove" \
+"status" \
+"change" \
+);
