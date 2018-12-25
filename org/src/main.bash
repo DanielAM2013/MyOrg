@@ -13,12 +13,9 @@
 
 num_tasks=$(cat data/tasklist | wc -l)
 
-
 get_current_timestamp () {
 	echo -n $(date +%s);
 }
-
-# priority end start status name
 
 priority_alg () {
 	sort -nk 3 data/tasklist_bare -o data/tasklist
