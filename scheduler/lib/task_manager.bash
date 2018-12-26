@@ -1,4 +1,3 @@
-#!/bin/bash
 
 source lib/resource_manager.bash
 
@@ -7,7 +6,6 @@ task_list () {
 }
 
 task_add () {
-	echo 2;
 	# increment last_tid
 	tid=$(cat dat/last_tid);
 	let "tid++";
@@ -28,7 +26,7 @@ task_add () {
 			break;
 		fi
 		let "step++"
-		add_resources $tid
+		add_resources $tid 
 	done
 }
 

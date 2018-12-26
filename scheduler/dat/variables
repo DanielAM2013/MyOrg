@@ -9,3 +9,11 @@ task=(
 "status" \
 "change" \
 );
+
+resource=(
+"add" \
+"add_to_task" \
+"remove" \
+"lock" \
+"free" \
+)
