@@ -1,12 +1,11 @@
-font pango:FontAwesome 10
+font pango:FontAwesome 12
 
 set $mod Mod4
+floating_modifier $mod
 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 for_window [class=".*"] title_format "Important | %title"
 new_window none
-
-floating_modifier $mod
 
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -92,30 +91,31 @@ focus_follows_mouse yes
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# color defines for zenburn styled i3
+client.focused          #4C7899 #285577 #FFFFFF #2E9EF4   #285577
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #F77979
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
-client.focused          #000000 #000000 #ffffff #000000 #00ffff
-#client.focused_inactive #000000 #000000 #ffffff #000000 #f00000
-client.focused_inactive #000000 #000000 #000000 #000000 #000000
-client.background       #000000
+client.background       #FFFFFF
 
 bar {
-	#strip_workspace_numbers yes
+	status_command i3status -c ~/.config/i3/i3status.conf
+	position top
 	colors {
-		# Whole color settings
 		background #000000
-		statusline #39a6aa
+		statusline #FFFFFF
 		separator  #666666
 
-		# Type             border  background font
-		focused_workspace  #0000ff #222222 #00ff00
-		active_workspace   #333333 #5f676a #ffffff
+		focused_workspace  #4C7899 #285577 #FFFFFF
+		active_workspace   #333333 #222222 #FFFFFF
 		inactive_workspace #333333 #222222 #888888
-		urgent_workspace   #aa0000 #990000 #ffffff
+		urgent_workspace   #2F343A #900000 #FFFFFF
+		binding_mode       #2F343A #900000 #FFFFFF
 	}
-	# i3bar position
-	position top
-	status_command i3status -c ~/.config/i3/i3status.conf
 }
+
 
 bindsym $mod+Tab focus left
 
@@ -127,11 +127,13 @@ exec --no-startup-id nm-applet
 
 # Screenshots
 bindsym $mod+Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures'
+
+bindsym Print exec "xclip -selection clipboard -t image/png -i ~/tmp/$n; sleep 1;"
 bindsym --release $mod+Shift+Print exec scrot -s ~/Pictures/Screenshots/%Y-%m-%d-%H%M%S.png -d 2
 
 
 # Audio 
-BIndsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3%
+Bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -3%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 

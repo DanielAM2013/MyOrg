@@ -44,7 +44,10 @@ fi
 
 if [ "`cat /sys/class/tty/tty0/active`" == "tty7" ]
 then
-	[ -z $TMUX ] && exec tmux new-session 
+	if [ -f ~/.tmux.toggle ]
+	then
+		[ -z $TMUX ] && exec tmux new-session 
+	fi
 fi
 
 ## history #####################################################################

@@ -1,2 +1,2 @@
-compton --config ~/.config/i3/compton.conf -b 
+#compton --config ~/.config/i3/compton.conf -b 
 xrdb -merge ~/.Xdefault

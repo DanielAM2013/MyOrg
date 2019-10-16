@@ -113,4 +113,18 @@ xload () {
 	echo $(xrdb -load ~/.Xdefault)
 }
 
+## Tmux ########################################################################
+toggle_tmux () {
+	file=~/.tmux.toggle
+	if [ ! -f $file ]
+	then
+		touch $file
+	else
+		rm $file
+	fi
+}
+
+
+
+
 

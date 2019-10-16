@@ -35,3 +35,8 @@ hi clear SpellBad
 hi SpellBad cterm=underline
 vmap <C-C> "+y
 set mouse=v
+if filereadable(expand('cscope.out'))
+	cs add cscope.out
+	set cscopetag
+	set csto=0
+endif
