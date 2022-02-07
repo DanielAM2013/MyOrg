@@ -8,7 +8,7 @@ URxvt*geometry: 120x40
 !URxvt*foreground: #ffffff
 URxvt*fading: 0
 
-URxvt.letterSpace: -2
+URxvt.letterSpace: -1
 URxvt*termName: rxvt-256color
 
 !-------------------------------------------------------------------------------
@@ -29,11 +29,8 @@ URxvt*cursorColor2: #aaaaaa
 !-------------------------------------------------------------------------------
 ! tabbedex is not provided by default (Debian/Ubuntu)
 ! put it in ~/.urxvt/
-!URxvt.perl-lib: .urxvt/
-!URxvt.perl-ext-common: default,matcher,clipboard
-
-!URxvt.keysym.C-M-c: perl:clipboard:copy
-!URxvt.keysym.C-M-v: perl:clipboard:paste
+URxvt.keysym.M-S-V: eval:paste_clipboard
+URxvt.keysym.M-S-C: eval:selection_to_clipboard
 
 !-------------------------------------------------------------------------------
 ! Launch firefox with the a left click on a URL

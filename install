@@ -1,35 +1,48 @@
 #!/bin/bash
 
-# check network
-# install source.list
-# 
-
-
 if [ -z "$MyOrg" ]
 then
 	sudo cp etc/default/keyboard /etc/default/keyboard
 	sudo cp etc/lightdm/lightdm* /etc/lightdm/
-	mv $HOME/.bashrc $HOME/.bashrc.old
-	mv $HOME/.config/i3 $HOME/.config/i3.old
-	ln -sr i3 $HOME/.config/i3
-	ln -sr .bashrc $HOME/
-	ln -sr .bashrc.d $HOME/
-	ln -sr .tmux.conf $HOME/
-	ln -sr .Xdefault $HOME/
-	ln -sr .Xdefault.d $HOME/
-	ln -sr .vimrc $HOME/
+
+	cp {,$HOME/}.config/gtk-3.0/settings.ini
+	cp {,$HOME/}.gtkrc-2.0
+	mv -f $HOME/.bashrc $HOME/.bashrc.old
+	mv -f $HOME/.config/i3 $HOME/.config/i3.old
+
+	echo "Linking settings files"
+
+	ln -srf i3 $HOME/.config/i3
+	ln -srf .urxvt $HOME/.urxvt
+	ln -srf .bashrc $HOME/
+	ln -srf .bashrc.d $HOME/
+	ln -srf .bash_aliases $HOME/
+	ln -srf .tmux.conf $HOME/
+	ln -srf .Xdefault $HOME/
+	ln -srf .Xdefault.d $HOME/
+	ln -srf .vimrc $HOME/
+	ln -srf .xsessionrc $HOME/
+	ln -srf bin $HOME/bin
+
+	echo "Install base packages"
+
 	sudo apt install -y \
 		git \
-		ctags \
+		exuberant-ctags \
+		build-essential \
 		lightdm \
 		lightdm-gtk-greeter-settings \
 		i3 \
+		rxvt-unicode \
 		network-manager-gnome \
 		thunar \
 		pavucontrol \
 		fonts-font-awesome \
 		tmux \
+		xclip \
+		scrot \
 		vim \
-		zathura \
+		zathura
+	echo "Configura Vim"
 	vim -c PluginInstall  -c quitall
 fi

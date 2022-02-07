@@ -29,7 +29,7 @@ get_i3_font () {
 }
 
 change_i3_font () {
-	local base_str="font\spango\:FontAwesome\s";
+	local base_str="font\spango\:Fo
 	local font_size=$(get_hor_res);
 	let "font_size=font_size/137";
 	local string="s/$base_str[0-9]*/$base_str$font_size/p";

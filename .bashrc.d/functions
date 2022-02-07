@@ -125,6 +125,13 @@ toggle_tmux () {
 }
 
 
+goto_learn () {
+	cd "/media/All/Learn/Cpp"
+}
+
+goto_project () {
+	cd "/media/All/Projects"
+}
 
 
 

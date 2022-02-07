@@ -6,8 +6,10 @@ fi
 
 ## set bash color ##############################################################
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-case "$TERM" in
-    xterm-color|rxvt-unicode|screen-256color) color_prompt=yes;;
+case "$TERM" in rxvt-unicode|*color)
+		export TERM="screen-256color"
+		color_prompt=yes
+	;;
 esac
 
 ## set bash line ###############################################################

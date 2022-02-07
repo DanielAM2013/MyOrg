@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo openconnect \
+	-v --dump-http-traffic --timestamp \
+	--no-dtls \
+	-u dtorquat \
+	 --protocol=nc \
+	 partnervpn.motorola.com/7119-otp | tee ~/Documents/mot_vpn.log
