@@ -9,6 +9,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'DanielAM2013/MyVim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'morhetz/gruvbox'
 Bundle 'mateusbraga/vim-spell-pt-br'
 
 call vundle#end()            " required
@@ -49,7 +50,7 @@ if filereadable(expand('cscope.out'))
 	set csto=0
 endif
 
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-space>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
@@ -64,3 +65,6 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_show_diagnostics_ui = 0
 
 filetype on
+colorscheme gruvbox
+set bg=dark
+let g:termdebug_wide=1

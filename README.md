@@ -1,2 +1,6 @@
 # MyOrg
-Organização do meu sistema operacional
+	Simple collection of dot files
+
+	i3
+	lightdm
+	vim

@@ -24,25 +24,30 @@ then
 	ln -srf .xsessionrc $HOME/
 	ln -srf bin $HOME/bin
 
-	echo "Install base packages"
+	echo "Install packages"
+
+	echo "Base programs"
+	sudo apt install -y \
+		vim \
+		tmux
+
+	echo "Desktop environment"
+	sudo apt install -y \
+		fonts-font-awesome \
+		lightdm \
+		lightdm-gtk-greeter-settings \
+		i3 \
+		network-manager-gnome \
+		pavucontrol \
+		thunar \
+		zathura \
+		xclip \
+		vim-gui \
+		scrot
 
 	sudo apt install -y \
 		git \
 		exuberant-ctags \
-		build-essential \
-		lightdm \
-		lightdm-gtk-greeter-settings \
-		i3 \
-		rxvt-unicode \
-		network-manager-gnome \
-		thunar \
-		pavucontrol \
-		fonts-font-awesome \
-		tmux \
-		xclip \
-		scrot \
-		vim \
-		zathura
-	echo "Configura Vim"
-	vim -c PluginInstall  -c quitall
+		cscope \
+		build-essential
 fi

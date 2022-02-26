@@ -5,30 +5,27 @@ export EDITOR=vim
 # colored GCC warnings and errors.
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-export ANDROID_HOME="/media/Files/Software/SDK"
+#export ANDROID_HOME="/media/Files/Software/SDK"
 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu"
-LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64/"
+#LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64/"
 
 # PATH_here
-export PATH="/home/daniel/perl5/bin${PATH:+:${PATH}}";
-export PERL5LIB="/home/daniel/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}";
-export PERL_LOCAL_LIB_ROOT="/home/daniel/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
-export PERL_MB_OPT="--install_base \"/home/daniel/perl5\"";
-export PERL_MM_OPT="INSTALL_BASE=/home/daniel/perl5";
+#export PATH="/home/daniel/perl5/bin${PATH:+:${PATH}}";
+#export PERL5LIB="/home/daniel/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}";
+#export PERL_LOCAL_LIB_ROOT="/home/daniel/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
+#export PERL_MB_OPT="--install_base \"/home/daniel/perl5\"";
+#export PERL_MM_OPT="INSTALL_BASE=/home/daniel/perl5";
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-
-# PATH_here
-export PATH=$PATH:$HOME/.vim/bundle/Scripts
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 
 # PATH_here
-export PATH=$PATH:/opt/Qualcomm/QCAT/QCAT/bin
+#export PATH=$PATH:$HOME/.vim/bundle/Scripts
+
 
 ## git #########################################################################
 export GIT_EMAIL=daniel.antela.torquato@gmail.com
